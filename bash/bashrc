@@ -1,0 +1,11 @@
+# each of the main functions of the bashrc broken down into 
+# separate files for easy management
+
+# handles environment variables
+. env
+
+# handles configurations
+. config
+
+# handles my aliases
+. aliases

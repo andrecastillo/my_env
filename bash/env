@@ -1,0 +1,5 @@
+# environment variables
+
+PATH=$PATH:~/bin/scripts:/Volumes/Home\ HD/andrecastillo/ksc/bin/
+export PATH
+

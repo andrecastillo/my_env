@@ -1,0 +1,231 @@
+" This is Andre Castillo's .vimrc file
+" ------------------------------------
+
+" ------------------------------------
+" START PATHOGEN
+" ------------------------------------
+
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+filetype plugin indent on
+
+let g:acp_enableAtStartup = 0
+
+"use vim settings rather than vi settings
+set nocompatible
+
+" ------------------------------------
+" GENERAL SETTINGS
+" ------------------------------------
+
+"sets the mouse to on
+set mouse=a
+
+"searches as you type
+set incsearch
+
+"highlights your search
+set hlsearch
+
+"ignores case when doing a search
+set ignorecase
+
+"will use case sensitivity if you really want it to
+set smartcase
+
+"sets my tabs to 2 spaces
+set tabstop=2
+
+"sets my tabs to 2 spaces
+set softtabstop=2
+
+"sets my tabs to 2 spaces
+set shiftwidth=2
+
+"sets my tabs to 2 spaces
+set noexpandtab
+
+"turns on line numbers
+set number
+
+"dont wrap lines
+set nowrap
+
+"tabs are tabs, not spaces
+set noexpandtab 	       		
+
+"allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+"always have autoindenting on
+set autoindent
+
+"copy the previous indentation on autoindenting
+set copyindent
+
+"set show mathcing parantheses
+set showmatch
+
+" set syntax on
+syntax on
+
+"insert tabs on the start of aline according to shiftwidth not tabstop
+set smarttab
+
+"always show what mode im currently editing in
+set showmode
+
+"keep 1 lines off the edges of the screen when scolling
+set scrolloff=1
+
+"set history to 1000
+set history=1000
+
+"set undolevels to 1000
+set undolevels=1000
+
+"do not keep backup files
+set nobackup
+
+"do not write intermedia swap files
+set noswapfile
+
+"always use a fast terminal
+set ttyfast
+
+"underline current line for faster orientation
+set cursorline
+
+"backspace and cursor keys wrap to
+set whichwrap=b,s,h,l,<,>,[,]	
+
+"lines to scroll when cursor leaves screen
+set scrolljump=5 				
+
+"auto fold code
+set foldenable
+
+"pastetoggle (sane indentation on pastes)
+set pastetoggle=<F12>
+
+"allows vim to detect filetype
+filetype plugin indent on
+
+"disable underlining of a in html files
+let html_no_rendering=1
+
+"allows showing of hidden files
+let NERDTreeShowHidden=1
+
+" set color scheme to torte
+colo torte
+
+" ------------------------------------
+"  COMMAS COMMANDS
+" ------------------------------------
+
+"sets the comma to be the leader
+let mapleader=","
+
+"sets ,ev to edit my vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+
+"sets ,sv to save my vimrc
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+"quickly close current window
+nnoremap <leader>q :q<CR>
+
+"use ,d (or ,dd or ,dj or 20,dd) to delete without adding to yank stack
+nmap <silent> <leader>d "_d
+vmap <silent> <leader>d "_d
+
+"yank/past to the OS clipboard with ,y and ,p
+nmap <leader>y "+y
+nmap <leader>Y "+yy
+nmap <leader>p "+p
+nmap <leader>P "+P
+
+"clears the search reqister
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" -----------------------------------
+" OTHER MAPPINGS 
+" -----------------------------------
+
+" Easier moving in tabs and windows
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-L> <C-W>l<C-W>_
+map <C-H> <C-W>h<C-W>_
+map <C-K> <C-W>k<C-W>_
+
+"sets ; to take the place of : so that I dont have to hit shift
+nnoremap ; :
+
+"avoid accidental hits of <F1> while aiming for <Esc>
+map! <F1> <Esc>
+
+"quick yanking to the end of the line
+nmap Y y$
+
+"quickly get out of insert mode
+inoremap jj <Esc>
+inoremap jk <Esc>
+
+nnoremap <silent> <Leader>f :CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+
+"quickly get out of insert mode
+nnoremap <C-o> <C-O>
+nnoremap <C-i> <C-I>
+
+" -----------------------------------
+" PLUGINS 
+" -----------------------------------
+
+" PIV {
+	let g:DisableAutoPHPFolding = 0
+	"let cfu=phpcomplete#CompletePHP
+" }
+
+" NERDTree {
+	function! NERDTreeInitAsNeeded()
+	    redir => bufoutput
+	    buffers!
+	    redir END
+	    let idx = stridx(bufoutput, "NERD_tree")
+	    if idx > -1
+		NERDTreeMirror
+		NERDTreeFind
+		wincmd l
+	    endif
+	endfunction
+" }
+
+" Delimitmate {
+	au FileType * let b:delimitMate_autoclose = 1
+
+	" If using html auto complete (complete closing tag)
+	au FileType xml,html,xhtml let b:delimitMate_matchpairs = "(:),[:],{:}"
+" }
+
+" AutoCloseTag {
+	" Make it so AutoCloseTag works for xml and xhtml files as well
+	au FileType xhtml,xml ru ftplugin/html/autoclosetag.vim
+" }
+	
+" Supertab {
+"	let g:SuperTabDefaultCompletionType = "context"
+"	let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+" }
+
+" Ctags {
+"	set tags=./tags;/,~/.vimtags
+" }
+
+" EasyTags {
+"	let g:easytags_cmd = 'ctags'
+" }
+"
