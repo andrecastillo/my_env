@@ -2,10 +2,10 @@
 # separate files for easy management
 
 # handles environment variables
-. env
+. ~/my_env/bash/env
 
 # handles configurations
-. config
+. ~/my_env/bash/config
 
 # handles my aliases
-. aliases
+. ~/my_env/bash/aliases
