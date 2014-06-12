@@ -1,6 +1,8 @@
 # each of the main functions of the bashrc broken down into 
 # separate files for easy management
 
+# NOTE: in my git repo the Dropbox directory is not included.
+
 # handles environment variables
 . ~/my_env/bash/env
 

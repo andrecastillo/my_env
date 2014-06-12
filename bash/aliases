@@ -1,15 +1,6 @@
 # aliases
 ##################################################################
 
-# git aliases
-# -----------
-alias grb='git pull --rebase origin staging' # git pull --rebase origin staging
-alias gcb='git checkout -b' # creates new branch
-alias gs='git status' # git status 
-alias ga='git add .' # git add . stages all unstaged files 
-alias gc='git commit -m' # commits changes
-alias gb='git branch' # list of branches
-
 # cli aliases
 # -----------
 alias ll='ls -alF'
@@ -19,28 +10,12 @@ alias lh='ls -lah'
 
 # edit file aliases
 # -----------------
-alias edit_aliases='vim ~/my_bin/aliases'
-alias edit_vimrc='vim ~/.vimrc'
+alias edit_aliases='vim ~/my_env/bash/aliases'
+alias edit_vimrc='vim ~/my_env/vim/.vimrc'
 
 # ssh server connection aliases
 # -----------------------------
-alias ssh_walmart_master_acastillo='ssh acastillo@walmart.realtimeprocess.net'
-alias ssh_walmart_demo_acastillo='ssh acastillo@demo.realtimeprocess.net'
-alias ssh_walmart_staging_acastillo='ssh acastillo@staging.realtimeprocess.net'
-alias ssh_walmart_testing_acastillo='ssh acastillo@testing.realtimeprocess.net'
-alias ssh_walmart_experimental_acastillo='ssh acastillo@exp.realtimeprocess.net'
-
-# command aliases 
-# ----------------
-alias resque_stop='sh /var/www/realtimeprocess/app/vendors/service-background-jobs.sh stop'
-alias resque_start='sh /var/www/realtimeprocess/app/vendors/service-background-jobs.sh start'
-alias resque_restart='sh /var/www/realtimeprocess/app/vendors/service-background-jobs.sh restart'
-alias resque_status='sh /var/www/realtimeprocess/app/vendors/service-background-jobs.sh status'
-alias set_web_permissions='find . -type f -exec sudo chmod 644 {} \; && find . -type d -exec sudo chmod 755 {} \;'
-
-# web project aliases
-# -------------------
-alias realtimeprocess='cd /var/www/realtimeprocess/'
+alias ssh_serenity='ssh -i ~/Dropbox/Development/pems/serenity_pem.pem ubuntu@serenity'
 
 # home directory aliases
 # ----------------------
@@ -50,14 +25,6 @@ alias downloads='cd ~/Downloads/'
 alias music='cd ~/Music/'
 alias pictures='cd ~/Pictures/'
 alias videos='cd ~/Videos/'
-
-# log aliases
-# -----------
-alias log_apache_error='tail -f /var/log/apache2/error.log'
-alias log_apache_access='tail -f /var/log/apache2/access.log'
-alias log_realtimeprocess_error='tail -f /var/www/realtimeprocess/app/tmp/logs/error.log'
-alias log_realtimeprocess_debug='tail -f /var/www/realtimeprocess/app/tmp/logs/debug.log'
-alias log_realtimeprocess_resque='tail -f /var/www/realtimeprocess/app/tmp/logs/service-background-jobs.log'
 
 # enable color support of ls and also add handy aliases
 # -----------------------------------------------------
@@ -71,6 +38,22 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+# log aliases
+# -----------
+#
+
+# git aliases
+# -----------
+#
+
+# command aliases 
+# ----------------
+#
+
+# web project aliases
+# -------------------
+#
 
 ################################
 # OLD ALIASES I DONT USE ANYMORE
@@ -93,3 +76,21 @@ fi
 # alias pbcopy='xclip -selection clipboard'
 # alias pbpaste='xclip -selection clipboard -o'
 # alias www='cd /var/www/'
+# alias ssh_walmart_master_acastillo='ssh acastillo@walmart.realtimeprocess.net'
+# alias ssh_walmart_demo_acastillo='ssh acastillo@demo.realtimeprocess.net'
+# alias ssh_walmart_staging_acastillo='ssh acastillo@staging.realtimeprocess.net'
+# alias ssh_walmart_testing_acastillo='ssh acastillo@testing.realtimeprocess.net'
+# alias ssh_walmart_experimental_acastillo='ssh acastillo@exp.realtimeprocess.net'
+# alias grb='git pull --rebase origin staging' # git pull --rebase origin staging
+# alias gcb='git checkout -b' # creates new branch
+# alias gs='git status' # git status 
+# alias ga='git add .' # git add . stages all unstaged files 
+# alias gc='git commit -m' # commits changes
+# alias gb='git branch' # list of branches
+# alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc"
+# alias realtimeprocess='cd /var/www/realtimeprocess/'
+# alias log_apache_error='tail -f /var/log/apache2/error.log'
+# alias log_apache_access='tail -f /var/log/apache2/access.log'
+# alias log_realtimeprocess_error='tail -f /var/www/realtimeprocess/app/tmp/logs/error.log'
+# alias log_realtimeprocess_debug='tail -f /var/www/realtimeprocess/app/tmp/logs/debug.log'
+# alias log_realtimeprocess_resque='tail -f /var/www/realtimeprocess/app/tmp/logs/service-background-jobs.log'

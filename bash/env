@@ -2,4 +2,10 @@
 
 PATH=$PATH:~/bin/scripts:/Volumes/Home\ HD/andrecastillo/ksc/bin/
 PATH=$PATH:/Users/andrecastillo/ksc/bin
+PATH=$PATH:/usr/local/bin
+
+# go path
+PATH=$PATH:/usr/local/go/bin
+
 export PATH
+export EDITOR=vim
