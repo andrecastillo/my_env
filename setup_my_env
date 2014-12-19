@@ -1,0 +1,36 @@
+#!/bin/bash
+
+echo "Starting setup"
+
+cd ~  
+echo "Changed to home directory"
+
+# copy files
+cp .bashrc .bashrc_orig
+echo ".bashrc copied to .bashrc_orig"
+
+cp -r .vim .vim_orig
+echo ".vim copied to .vim_orig"
+
+cp .vimrc .vimrc_orig
+echo ".vimrc copied to .vimrc_orig"
+
+# remove originals
+rm .bashrc
+echo "Removed .bashrc"
+
+rm -r .vim
+echo "Removed .vim"
+
+rm .vimrc
+echo "Removed .vimrc"
+
+# symlink to my_env files
+ln -s ~/my_env/bash/bashrc .bashrc  
+echo "Symlinked .bashrc"
+
+ln -s ~/my_env/vim/ .vim
+echo "Symlinked .vim"
+
+ln -s ~/my_env/vim/vimrc .vimrc
+echo "Symlinked .vimrc"
