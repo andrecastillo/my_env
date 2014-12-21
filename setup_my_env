@@ -1,23 +1,47 @@
 #!/bin/bash
 
+set -e	# better to exit on an error then to let it fuck shit up
+
+# This script is used to quickly set up my_env on a system that I've cloned the repo into.
+# I use this setup across many of the servers, and systems I'm on, because damnit I like
+# my setup a whole lot.
+
+# Basic usage is simple, clone or download the repo into your home directory, then run this setup script
+
+# set some variables
+home=$HOME	# gonna use this throughout
+dropbox="Dropbox"	# setting just in case dropbox is different folder, I can change this var
+
+cd "${home}"	# let's go to home directory to do all this work
+
+clear # want to see the output on it's own
+printf "\n\n"
 echo "========================================="
 echo "Setup Started."
 echo "========================================="
+printf "\n\n"
 
-dropbox="Dropbox"
+function checkthencopy () 
+{
+	if [[ -h "${home}/$1" ]]; then
+		echo "$1 is already a symlink, skipping cp"
+	else
+		cp "${home}/$1" "${home}/$1_orig" && { echo "Original $1 successfully copied to $1_orig"; } || { echo "Original $1 not copied. You need to check out why."; }
+	fi
+}
 
-if [ -d ~/"$dropbox"/ ]; then
-	myenvrootdir="~/Dropbox/"
+# Check if there is a dropbox folder (because I keep my_env files in dropbox) but on servers and other systems where
+# i'm not using dropbox, I need to use just the local user folder without dropbox in the mix
+if [ -d "${home}/${dropbox}/" ]; then
+	myenvrootdir="${home}/${dropbox}/"
 else
-	myenvrootdir="~/"
+	myenvrootdir="${home}/"
 fi
 
-cd ~ && { echo "In home directory"; } || { echo "Dude, we didn't make it into your home directory. We're gonna have some problems."; }
-
-# copy files
-cp ~/.bashrc ~/.bashrc_orig && { echo "Original .bashrc successfully copied to .bashrc_orig"; } || { echo "Original .bashrc not copied"; }
-cp -r ~/.vim ~/.vim_orig && { echo "Original.vim copied successufully to .vim_orig"; } || { echo "Original .vim not copied"; }
-cp ~/.vimrc ~/.vimrc_orig && { echo "Original .vimrc copied successfully to .vimrc_orig"; } || { echo "Original .vimrc not copied"; }
+# check if .bashrc is a symlink before copying them, if they are, don't copy, if they are not, then copy
+checkthencopy .bashrc
+checkthencopy .vim
+checkthencopy .vimrc
 
 # remove originals
 rm ~/.bashrc && { echo "Original .bashrc removed"; } || { echo "Error removing original .bashrc"; }
@@ -25,11 +49,13 @@ rm -r ~/.vim && { echo "Original .vim removed"; } || { echo "Error removing orig
 rm ~/.vimrc && { echo "Original .vimrc removed"; } || { echo "Error removing original .vimrc"; }
 
 # symlink to my_env files
-ln -s ${myenvrootdir}my_env/bash/bashrc .bashrc && { echo "Symlink to .bashrc in my_env/bash successful"; } || { echo "Symlink to my_env/.bashrc not made"; }  
-ln -s ${myenvrootdir}my_env/vim/ .vim && { echo "Symlink to .vim in my_env/ successful"; } || { echo "Symlink to my_env/.vim not made"; }
-ln -s ${myenvrootdir}my_env/vim/vimrc .vimrc && { echo "Symlink to .vimrc in my_env/ successful"; } || { echo "Symlink to my_env/.vimrc not made"; }
+ln -s "${myenvrootdir}my_env/bash/bashrc" .bashrc && { echo "Symlink to .bashrc in my_env/bash successful"; } || { echo "Symlink to my_env/.bashrc not made"; }  
+ln -s "${myenvrootdir}my_env/vim/" .vim && { echo "Symlink to .vim in my_env/ successful"; } || { echo "Symlink to my_env/.vim not made"; }
+ln -s "${myenvrootdir}my_env/vim/vimrc" .vimrc && { echo "Symlink to .vimrc in my_env/ successful"; } || { echo "Symlink to my_env/.vimrc not made"; }
 
+printf "\n\n"
 echo "========================================="
 echo "Setup Completed."
 echo "Check the output for any errors and correct manually if needed."
 echo "========================================="
+printf "\n\n"
