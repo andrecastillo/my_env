@@ -1,8 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/var/log'
-let g:netrw_dirhist_2='/var/www/realtimeprocess'
-let g:netrw_dirhist_3='/var/www/realtimeprocess/cake'
-let g:netrw_dirhist_4='/var/www/realtimeprocess'
-let g:netrw_dirhist_5='/var/www/realtimeprocess/cake'
-let g:netrw_dirhist_6='/var/www/realtimeprocess'
+let g:netrw_dirhist_cnt =0

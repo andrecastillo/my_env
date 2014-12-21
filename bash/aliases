@@ -10,12 +10,14 @@ alias lh='ls -lah'
 
 # edit file aliases
 # -----------------
-alias edit_aliases='vim ~/my_env/bash/aliases'
-alias edit_vimrc='vim ~/my_env/vim/.vimrc'
+# HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
+alias edit_aliases='vim ~/Dropbox/my_env/bash/aliases'
+alias edit_vimrc='vim ~/Dropbox/my_env/vim/.vimrc'
 
 # ssh server connection aliases
 # -----------------------------
 alias ssh_serenity='ssh -i ~/Dropbox/Development/pems/serenity_pem.pem ubuntu@serenity'
+alias ssh_main_dev='ssh andre@main_dev'
 
 # home directory aliases
 # ----------------------

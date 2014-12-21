@@ -2,10 +2,13 @@
 # separate files for easy management
 
 # handles environment variables
-. ~/my_env/bash/env
+# HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
+. ~/Dropbox/my_env/bash/env
 
 # handles configurations
-. ~/my_env/bash/config
+# HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
+. ~/Dropbox/my_env/bash/config
 
 # handles my aliases
-. ~/my_env/bash/aliases
+# HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
+. ~/Dropbox/my_env/bash/aliases
