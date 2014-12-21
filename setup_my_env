@@ -21,6 +21,7 @@ echo "Setup Started."
 echo "========================================="
 printf "\n\n"
 
+# check if there is a symlink before copying them, if they are, don't copy, if they are not, then copy
 function checkthencopy () 
 {
 	if [[ -h "${home}/$1" ]]; then
@@ -38,7 +39,7 @@ else
 	myenvrootdir="${home}/"
 fi
 
-# check if .bashrc is a symlink before copying them, if they are, don't copy, if they are not, then copy
+# run checks and copy if needed for backup
 checkthencopy .bashrc
 checkthencopy .vim
 checkthencopy .vimrc
