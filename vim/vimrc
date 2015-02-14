@@ -1,125 +1,72 @@
 " This is Andre Castillo's .vimrc file
 " ------------------------------------
 
-" ------------------------------------
-" START PATHOGEN
-" ------------------------------------
-
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-filetype plugin indent on
-
-let g:acp_enableAtStartup = 0
-
-"use vim settings rather than vi settings
 set nocompatible
+filetype off
+
+" ----- vim vundle specific settings as of 02/13/15 -----
+set rtp+=~/.vim/bundle/vundle/
+
+call vundle#begin() " lots of plugins at http://vim-scripts.org/vim/scripts.html
+
+Plugin 'gmarik/vundle' " must be first plugin 
+
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'L9'
+Plugin 'rstacruz/sparkup'
+
+call vundle#end()
+" ----- vim vundle specific settings as of 02/13/15 -----
 
 " ------------------------------------
 " GENERAL SETTINGS
 " ------------------------------------
 
-"sets the mouse to on
-set mouse=a
-
-"searches as you type
-set incsearch
-
-"highlights your search
-set hlsearch
-
-"ignores case when doing a search
-set ignorecase
-
-"will use case sensitivity if you really want it to
-set smartcase
-
-"sets my tabs to 2 spaces
-set tabstop=2
-
-"sets my tabs to 2 spaces
-set softtabstop=2
-
-"sets my tabs to 2 spaces
-set shiftwidth=2
-
-"sets my tabs to 2 spaces
-set noexpandtab
-
-"turns on line numbers
-set number
-
-"dont wrap lines
-set nowrap
-
-"tabs are tabs, not spaces
-set noexpandtab 	       		
-
-"allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-"always have autoindenting on
-set autoindent
-
-"copy the previous indentation on autoindenting
-set copyindent
-
-"set show mathcing parantheses
-set showmatch
-
-" set syntax on
-syntax on
-
-"insert tabs on the start of aline according to shiftwidth not tabstop
-set smarttab
-
-"always show what mode im currently editing in
-set showmode
-
-"keep 1 lines off the edges of the screen when scolling
-set scrolloff=1
-
-"set history to 1000
-set history=1000
-
-"set undolevels to 1000
-set undolevels=1000
-
-"do not keep backup files
-set nobackup
-
-"do not write intermedia swap files
-set noswapfile
-
-"always use a fast terminal
-set ttyfast
-
-"underline current line for faster orientation
-set cursorline
-
-"backspace and cursor keys wrap to
-set whichwrap=b,s,h,l,<,>,[,]	
-
-"lines to scroll when cursor leaves screen
-set scrolljump=5 				
-
-"auto fold code
-set foldenable
-
-"pastetoggle (sane indentation on pastes)
-set pastetoggle=<F12>
-
-"allows vim to detect filetype
 filetype plugin indent on
 
-"disable underlining of a in html files
-let html_no_rendering=1
+set mouse=a
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set noexpandtab
+set number
+set smarttab
+set showmode
+set scrolloff=1
+set history=1000
+set undolevels=1000
+set nobackup
+set noswapfile
+set ttyfast
+set cursorline
+set whichwrap=b,s,h,l,<,>,[,]	
+set scrolljump=5 				
+set foldenable
+set pastetoggle=<F12>
 
-"allows showing of hidden files
+autocmd BufWritePre *.rb :%s/\s\+$//e
+autocmd BufWritePre *.go :%s/\s\+$//e
+autocmd BufWritePre *.haml :%s/\s\+$//e
+autocmd BufWritePre *.html :%s/\s\+$//e
+autocmd BufWritePre *.scss :%s/\s\+$//e
+autocmd BufWritePre *.slim :%s/\s\+$//e
+
+let html_no_rendering=1
 let NERDTreeShowHidden=1
 
-" set color scheme to torte
-colo torte
+color jellybeans
 
 " ------------------------------------
 "  COMMAS COMMANDS
@@ -174,58 +121,6 @@ nmap Y y$
 inoremap jj <Esc>
 inoremap jk <Esc>
 
-nnoremap <silent> <Leader>f :CommandT<CR>
-nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-
 "quickly get out of insert mode
 nnoremap <C-o> <C-O>
 nnoremap <C-i> <C-I>
-
-" -----------------------------------
-" PLUGINS 
-" -----------------------------------
-
-" PIV {
-	let g:DisableAutoPHPFolding = 0
-	"let cfu=phpcomplete#CompletePHP
-" }
-
-" NERDTree {
-	function! NERDTreeInitAsNeeded()
-	    redir => bufoutput
-	    buffers!
-	    redir END
-	    let idx = stridx(bufoutput, "NERD_tree")
-	    if idx > -1
-		NERDTreeMirror
-		NERDTreeFind
-		wincmd l
-	    endif
-	endfunction
-" }
-
-" Delimitmate {
-	au FileType * let b:delimitMate_autoclose = 1
-
-	" If using html auto complete (complete closing tag)
-	au FileType xml,html,xhtml let b:delimitMate_matchpairs = "(:),[:],{:}"
-" }
-
-" AutoCloseTag {
-	" Make it so AutoCloseTag works for xml and xhtml files as well
-	au FileType xhtml,xml ru ftplugin/html/autoclosetag.vim
-" }
-	
-" Supertab {
-"	let g:SuperTabDefaultCompletionType = "context"
-"	let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-" }
-
-" Ctags {
-"	set tags=./tags;/,~/.vimtags
-" }
-
-" EasyTags {
-"	let g:easytags_cmd = 'ctags'
-" }
-"
