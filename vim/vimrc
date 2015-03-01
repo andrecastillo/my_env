@@ -49,6 +49,7 @@ set history=1000
 set undolevels=1000
 set nobackup
 set noswapfile
+set ttymouse=xterm2
 set ttyfast
 set cursorline
 set whichwrap=b,s,h,l,<,>,[,]	
@@ -83,6 +84,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 "quickly close current window
 nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
 
 "use ,d (or ,dd or ,dj or 20,dd) to delete without adding to yank stack
 nmap <silent> <leader>d "_d

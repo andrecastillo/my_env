@@ -16,8 +16,6 @@ alias edit_vimrc='vim ~/Dropbox/my_env/vim/.vimrc'
 
 # ssh server connection aliases
 # -----------------------------
-alias ssh_serenity='ssh -i ~/Dropbox/Development/pems/serenity_pem.pem ubuntu@serenity'
-alias ssh_main_dev='ssh andre@main_dev'
 
 # home directory aliases
 # ----------------------
@@ -47,7 +45,12 @@ fi
 
 # git aliases
 # -----------
-#
+alias gcb='git checkout -b' # creates new branch
+alias gs='git status' # git status 
+alias ga='git add .' # git add . stages all unstaged files 
+alias gc='git commit -m' # commits changes
+alias gb='git branch' # list of branches
+
 
 # command aliases 
 # ----------------
@@ -84,11 +87,6 @@ fi
 # alias ssh_walmart_testing_acastillo='ssh acastillo@testing.realtimeprocess.net'
 # alias ssh_walmart_experimental_acastillo='ssh acastillo@exp.realtimeprocess.net'
 # alias grb='git pull --rebase origin staging' # git pull --rebase origin staging
-# alias gcb='git checkout -b' # creates new branch
-# alias gs='git status' # git status 
-# alias ga='git add .' # git add . stages all unstaged files 
-# alias gc='git commit -m' # commits changes
-# alias gb='git branch' # list of branches
 # alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc"
 # alias realtimeprocess='cd /var/www/realtimeprocess/'
 # alias log_apache_error='tail -f /var/log/apache2/error.log'

@@ -12,3 +12,10 @@
 # handles my aliases
 # HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
 . ~/Dropbox/my_env/bash/aliases
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
