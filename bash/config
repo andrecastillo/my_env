@@ -4,4 +4,4 @@ parse_git_branch() {
 }
 
 # Update the command prompt
-PS1="\u : \w \$(parse_git_branch)\n: "
+PS1="\n\u : \w \$(parse_git_branch)\n: "

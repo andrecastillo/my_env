@@ -50,9 +50,9 @@ rm -r ~/.vim && { echo "Original .vim removed"; } || { echo "Error removing orig
 rm ~/.vimrc && { echo "Original .vimrc removed"; } || { echo "Error removing original .vimrc"; }
 
 # symlink to my_env files
-ln -s "${myenvrootdir}my_env/bash/bashrc" .bashrc && { echo "Symlink to .bashrc in my_env/bash successful"; } || { echo "Symlink to my_env/.bashrc not made"; }  
-ln -s "${myenvrootdir}my_env/vim/" .vim && { echo "Symlink to .vim in my_env/ successful"; } || { echo "Symlink to my_env/.vim not made"; }
-ln -s "${myenvrootdir}my_env/vim/vimrc" .vimrc && { echo "Symlink to .vimrc in my_env/ successful"; } || { echo "Symlink to my_env/.vimrc not made"; }
+ln -nfs "${myenvrootdir}my_env/bash/bashrc" .bashrc && { echo "Symlink to .bashrc in my_env/bash successful"; } || { echo "Symlink to my_env/.bashrc not made"; }  
+ln -nfs "${myenvrootdir}my_env/vim/" .vim && { echo "Symlink to .vim in my_env/ successful"; } || { echo "Symlink to my_env/.vim not made"; }
+ln -nfs "${myenvrootdir}my_env/vim/vimrc" .vimrc && { echo "Symlink to .vimrc in my_env/ successful"; } || { echo "Symlink to my_env/.vimrc not made"; }
 
 printf "\n\n"
 echo "========================================="

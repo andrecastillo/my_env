@@ -12,7 +12,7 @@ alias lh='ls -lah'
 # -----------------
 # HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
 alias edit_aliases='vim ~/Dropbox/my_env/bash/aliases'
-alias edit_vimrc='vim ~/Dropbox/my_env/vim/.vimrc'
+alias edit_vimrc='vim ~/.vimrc'
 
 # ssh server connection aliases
 # -----------------------------

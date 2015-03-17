@@ -1,9 +1,6 @@
 # environment variables
 PATH=$PATH:/usr/local/bin
 
-# go path
-PATH=$PATH:/usr/local/go/bin
-
 export PATH
 export EDITOR=vim
 
