@@ -1,0 +1,61 @@
+# aliases
+##################################################################
+
+# cli aliases
+# -----------
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lh='ls -lah'
+
+# edit file aliases
+# -----------------
+# HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
+alias edit_aliases='vim ~/my_env/.aliases'
+alias edit_bashrc='vim ~/my_env/.bashrc'
+alias edit_config='vim ~/my_env/.config'
+alias edit_env='vim ~/my_env/.env'
+alias edit_tmuxconf='vim ~/my_env/.tmux.conf'
+alias edit_vimrc='vim ~/my_env/.vimrc'
+
+# ssh server connection aliases
+# -----------------------------
+
+# home directory aliases
+# ----------------------
+alias desktop='cd ~/Desktop/'
+alias downloads='cd ~/Downloads/'
+
+# enable color support of ls and also add handy aliases
+# -----------------------------------------------------
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# log aliases
+# -----------
+#
+
+# git aliases
+# -----------
+alias gcb='git checkout -b' # creates new branch
+alias gs='git status' # git status 
+alias ga='git add .' # git add . stages all unstaged files 
+alias gc='git commit -m' # commits changes
+alias gb='git branch' # list of branches
+
+
+# command aliases 
+# ----------------
+#
+
+# web project aliases
+# -------------------
+#

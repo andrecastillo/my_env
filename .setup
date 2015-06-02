@@ -1,0 +1,64 @@
+#!/bin/bash
+
+set -e	# better to exit on an error then to let it fuck shit up
+
+# This script is used to quickly set up my_env on a system that I've cloned the repo into.
+# I use this setup across many of the servers, and systems I'm on, because damnit I like
+# my setup a whole lot.
+
+# Basic usage is simple, clone or download the repo into your home directory, then run this setup script
+
+# set some variables
+home=$HOME	# gonna use this throughout
+
+cd "${home}"	# let's go to home directory to do all this work
+
+clear # want to see the output on it's own
+printf "\n\n"
+echo "========================================="
+echo "Setup Started."
+echo "========================================="
+printf "\n\n"
+
+# check if there is a symlink before copying them, if they are, don't copy, if they are not, then copy
+function checkthencopy () 
+{
+	if [[ -h "${home}/$1" ]]; then
+		echo "$1 is already a symlink, skipping cp"
+	else
+		cp "${home}/$1" "${home}/$1_orig" && { echo "Original $1 successfully copied to $1_orig"; } || { echo "Original $1 not copied. You need to check out why."; }
+	fi
+}
+
+myenvrootdir="${home}/"
+
+# run checks and copy if needed for backup
+checkthencopy .bashrc
+checkthencopy .bash_profile
+checkthencopy .profile
+checkthencopy .vim
+checkthencopy .vimrc
+checkthencopy .tmux.conf
+
+# remove originals
+rm ~/.bashrc && { echo "Original .bashrc removed"; } || { echo "Error removing original .bashrc"; }
+rm ~/.bash_profile && { echo "Original .bash_profile removed"; } || { echo "Error removing original .bash_profile"; }
+rm ~/.profile && { echo "Original .profile removed"; } || { echo "Error removing original .profile"; }
+rm -r ~/.vim && { echo "Original .vim removed"; } || { echo "Error removing original .vim"; }
+rm ~/.vimrc && { echo "Original .vimrc removed"; } || { echo "Error removing original .vimrc"; }
+rm ~/.tmux.conf && { echo "Original .tmux.conf removed"; } || { echo "Error removing original .tmux.conf"; }
+
+# symlink to my_env files
+ln -nfs "${myenvrootdir}my_env/.bashrc" .bashrc && { echo "Symlink to .bashrc in my_env/ successful"; } || { echo "Symlink to my_env/.bashrc not made"; }  
+ln -nfs "${myenvrootdir}my_env/.bash_profile" .bash_profile && { echo "Symlink to .bash_profile in my_env/ successful"; } || { echo "Symlink to my_env/.bash_profile not made"; }  
+ln -nfs "${myenvrootdir}my_env/.profile" .profile && { echo "Symlink to .profile in my_env/ successful"; } || { echo "Symlink to my_env/.profile not made"; }  
+ln -nfs "${myenvrootdir}my_env/.vim/" .vim && { echo "Symlink to .vim in my_env/ successful"; } || { echo "Symlink to my_env/.vim not made"; }
+ln -nfs "${myenvrootdir}my_env/.vimrc" .vimrc && { echo "Symlink to .vimrc in my_env/ successful"; } || { echo "Symlink to my_env/.vimrc not made"; }
+ln -nfs "${myenvrootdir}my_env/.tmux.conf" .tmux.conf && { echo "Symlink to .tmux.conf in my_env/ successful"; } || { echo "Symlink to my_env/.tmux.conf not made"; }
+
+printf "\n\n"
+echo "========================================="
+echo "Setup Completed."
+echo "Check the output for any errors and correct manually if needed."
+echo "========================================="
+printf "\n\n"
