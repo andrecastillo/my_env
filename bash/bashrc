@@ -2,16 +2,13 @@
 # separate files for easy management
 
 # handles environment variables
-# HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
-. ~/Dropbox/my_env/bash/env
+. ~/my_env/bash/env
 
 # handles configurations
-# HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
-. ~/Dropbox/my_env/bash/config
+. ~/my_env/bash/config
 
 # handles my aliases
-# HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
-. ~/Dropbox/my_env/bash/aliases
+. ~/my_env/bash/aliases
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -19,3 +16,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# Added for android studio - fastboot and adb - quick access
+if [ -d "<path-to-sdk>/platform-tools" ] ; then
+	  export PATH="<path-to-sdk>/platform-tools:$PATH"
+fi
