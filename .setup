@@ -8,6 +8,8 @@ set -e	# better to exit on an error then to let it fuck shit up
 
 # Basic usage is simple, clone or download the repo into your home directory, then run this setup script
 
+# TODO: Need to add script to pull down any plugins that are needed for either vim or tmux that aren't in the repo
+
 # set some variables
 home=$HOME	# gonna use this throughout
 
