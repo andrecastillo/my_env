@@ -25,6 +25,7 @@ alias edit_vimrc='vim ~/my_env/.vimrc'
 # ----------------------
 alias desktop='cd ~/Desktop/'
 alias downloads='cd ~/Downloads/'
+alias development='cd ~/Development/'
 
 # enable color support of ls and also add handy aliases
 # -----------------------------------------------------
