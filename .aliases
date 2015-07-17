@@ -20,11 +20,14 @@ alias edit_vimrc='vim ~/my_env/.vimrc'
 
 # ssh server connection aliases
 # -----------------------------
+alias ssh_andrecastillo.com='ssh -p 177 dv310p3r@andrecastillo.com'
+alias ssh_galactica='ssh dv310p3r@192.168.1.12'
 
 # home directory aliases
 # ----------------------
 alias desktop='cd ~/Desktop/'
 alias downloads='cd ~/Downloads/'
+alias development='cd ~/Development/'
 
 # enable color support of ls and also add handy aliases
 # -----------------------------------------------------
