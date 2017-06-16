@@ -58,6 +58,7 @@ alias gb='git branch' # list of branches
 
 # command aliases 
 # ----------------
+# alias composer="php /usr/local/bin/composer.phar"
 #
 
 # web project aliases
