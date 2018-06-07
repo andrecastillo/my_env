@@ -11,18 +11,12 @@ alias diskspace='df -h'
 
 # edit file aliases
 # -----------------
-# HERE I NEED TO FIX IT SO THAT THE PATH DOESN'T USE DROPBOX
 alias edit_aliases='vim ~/my_env/.aliases'
 alias edit_bashrc='vim ~/my_env/.bashrc'
 alias edit_config='vim ~/my_env/.config'
 alias edit_env='vim ~/my_env/.env'
 alias edit_tmuxconf='vim ~/my_env/.tmux.conf'
 alias edit_vimrc='vim ~/my_env/.vimrc'
-
-# ssh server connection aliases
-# -----------------------------
-alias ssh_andrecastillo.com='ssh -p 177 dv310p3r@andrecastillo.com'
-alias ssh_galactica='ssh dv310p3r@192.168.1.12'
 
 # home directory aliases
 # ----------------------
@@ -59,7 +53,7 @@ alias gb='git branch' # list of branches
 # command aliases 
 # ----------------
 # alias composer="php /usr/local/bin/composer.phar"
-#
+alias hg='history | grep' #allows me to quickly grep my command history
 
 # web project aliases
 # -------------------
