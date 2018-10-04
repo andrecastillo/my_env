@@ -68,3 +68,10 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 # --------------------
 alias bitbucket='cd ~/Bitbucket'
 alias linc='cd ~/Bitbucket/thelinc'
+
+# TMUX specific aliases
+# --------------------
+alias tls='tmux list-sessions'
+alias tds='tmux detach'
+alias tas='tmux attach-session -t'
+alias tns='tmux new-session -s'
