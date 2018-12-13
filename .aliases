@@ -74,8 +74,7 @@ alias tns='tmux new-session -s'
 # ADE specific aliases
 # # rpr = review pull request
 # --------------------
-alias bitbucket='cd ~/Bitbucket'
-alias linc='cd ~/Bitbucket/thelinc'
+alias linc='cd ~/thelinc/Development/thelinc'
 
 # source additional aliases
-. ~/Bitbucket/thelinc/.aliases
+. ~/thelinc/Development/thelinc/.aliases
