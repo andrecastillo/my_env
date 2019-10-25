@@ -8,6 +8,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lh='ls -lah'
 alias diskspace='df -h'
+alias path="echo $PATH | tr -s ':' '\n'"
 
 # edit file aliases
 # -----------------
@@ -74,7 +75,10 @@ alias tns='tmux new-session -s'
 # ADE specific aliases
 # # rpr = review pull request
 # --------------------
-alias linc='cd ~/thelinc/Development/thelinc'
+alias linc='cd ~/Development/thelinc'
 
 # source additional aliases
-. ~/thelinc/Development/thelinc/.aliases
+. ~/Development/thelinc/.aliases
+
+# this one is particularly for my mac ctags
+alias ctags='/usr/local/bin/ctags'

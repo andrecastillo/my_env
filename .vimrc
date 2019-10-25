@@ -15,8 +15,8 @@ Plugin 'gmarik/vundle' " must be first plugin
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
+" Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-rake'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'L9'
@@ -36,9 +36,9 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set number
 set smarttab
@@ -65,6 +65,9 @@ autocmd BufWritePre *.slim :%s/\s\+$//e
 
 let html_no_rendering=1
 let NERDTreeShowHidden=1
+
+:set list
+:set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 
 " ------------------------------------
 "  COMMAS COMMANDS
@@ -98,6 +101,8 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 
 "turn off shift k so that it doesn't try and man the word under the cursor
 nnoremap K <nop>
+
+nnoremap <Leader>f :NERDTreeToggle<Enter>
 
 " -----------------------------------
 " OTHER MAPPINGS 
@@ -134,3 +139,5 @@ nnoremap <C-i> <C-I>
 " colorscheme jellybeans
 " colorscheme darkspectrum
 colorscheme railscasts
+
+set tags=tags

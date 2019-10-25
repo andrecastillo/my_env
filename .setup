@@ -22,6 +22,9 @@ echo "Setup Started."
 echo "========================================="
 printf "\n\n"
 
+echo "Cloning the tmux plugin manager into home directory."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # check if there is a symlink before copying them, if they are, don't copy, if they are not, then copy
 function checkthencopy () 
 {
@@ -61,6 +64,11 @@ ln -nfs "${myenvrootdir}my_env/.tmux.conf" .tmux.conf && { echo "Symlink to .tmu
 printf "\n\n"
 echo "========================================="
 echo "Setup Completed."
+
+echo "Couple of things to do before you're all the way done."
+echo "1. Remember to install ctags before running vim, this is different on mac than it is on linux."
+echo "2. Remember to run :pluginInstall the first time you run vim."
+
 echo "Check the output for any errors and correct manually if needed."
 echo "========================================="
 printf "\n\n"
