@@ -10,17 +10,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin() " lots of plugins at http://vim-scripts.org/vim/scripts.html
 
-Plugin 'gmarik/vundle' " must be first plugin 
-
+Plugin 'gmarik/Vundle.vim' " must be first plugin 
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'tpope/vim-rails'
-" Plugin 'tpope/vim-rake'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'L9'
-Plugin 'rstacruz/sparkup'
 
 call vundle#end()
 " ----- vim vundle specific settings as of 02/13/15 -----
