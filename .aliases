@@ -75,7 +75,7 @@ alias tns='tmux new-session -s'
 # ADE specific aliases
 # # rpr = review pull request
 # --------------------
-alias linc='cd ~/Development/thelinc'
+alias thelinc='cd ~/Development/thelinc'
 
 # source additional aliases
 . ~/Development/thelinc/.aliases

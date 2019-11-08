@@ -1,8 +1,7 @@
-" This is Andre Castillo's .vimrc file
-" ------------------------------------
+" This is Andre Castillo's .vimrc file -----------------------------------
 "
 syntax on
-set nocompatible
+set nocompatible 
 filetype off
 
 " ----- vim vundle specific settings as of 02/13/15 -----
@@ -15,6 +14,10 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
+Plugin 'phpactor/phpactor'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'kristijanhusak/deoplete-phpactor'
+Plugin 'kshenoy/vim-signature'
 
 call vundle#end()
 " ----- vim vundle specific settings as of 02/13/15 -----
@@ -61,7 +64,8 @@ let html_no_rendering=1
 let NERDTreeShowHidden=1
 
 :set list
-:set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+" this will show special characters for whitespaces, etc...
+" :set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 
 " ------------------------------------
 "  COMMAS COMMANDS
@@ -130,8 +134,15 @@ nnoremap <C-i> <C-I>
 " COLOR SCHEME 
 " -----------------------------------
 
-" colorscheme jellybeans
-" colorscheme darkspectrum
-colorscheme railscasts
+colorscheme neverland 
 
 set tags=tags
+
+" yank to clipboard
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
