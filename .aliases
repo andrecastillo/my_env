@@ -60,11 +60,6 @@ alias hg='history | grep' #allows me to quickly grep my command history
 # -------------------
 #
 
-# mac specific aliases
-# ------------------- 
-alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-
 # TMUX specific aliases
 # --------------------
 alias tls='tmux list-sessions'
@@ -72,13 +67,9 @@ alias tds='tmux detach'
 alias tas='tmux attach-session -t'
 alias tns='tmux new-session -s'
 
-# ADE specific aliases
 # # rpr = review pull request
 # --------------------
 alias thelinc='cd ~/Development/thelinc'
 
 # source additional aliases
 . ~/Development/thelinc/.aliases
-
-# this one is particularly for my mac ctags
-alias ctags='/usr/local/bin/ctags'
