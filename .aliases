@@ -70,6 +70,3 @@ alias tns='tmux new-session -s'
 # # rpr = review pull request
 # --------------------
 alias thelinc='cd ~/Development/thelinc'
-
-# source additional aliases
-. ~/Development/thelinc/.aliases
