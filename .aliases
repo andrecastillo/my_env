@@ -78,7 +78,7 @@ alias tns='tmux new-session -s'
 alias thelinc='cd ~/Development/thelinc'
 
 # source additional aliases
-# . ~/Development/thelinc/.aliases
+. ~/Development/thelinc/.aliases
 
 # this one is particularly for my mac ctags
 alias ctags='/usr/local/bin/ctags'
