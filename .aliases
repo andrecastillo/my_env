@@ -67,6 +67,7 @@ alias tds='tmux detach'
 alias tas='tmux attach-session -t'
 alias tns='tmux new-session -s'
 
-# # rpr = review pull request
+# sourcing thelinc alias file
 # --------------------
 alias thelinc='cd ~/Development/thelinc'
+. ~/Development/thelinc/.aliases
