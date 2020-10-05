@@ -41,7 +41,6 @@ myenvrootdir="${home}/"
 checkthencopy .bashrc
 checkthencopy .bash_profile
 checkthencopy .profile
-checkthencopy .vim
 checkthencopy .vimrc
 checkthencopy .tmux.conf
 
@@ -49,7 +48,6 @@ checkthencopy .tmux.conf
 rm ~/.bashrc && { echo "Original .bashrc removed"; } || { echo "Error removing original .bashrc"; }
 rm ~/.bash_profile && { echo "Original .bash_profile removed"; } || { echo "Error removing original .bash_profile"; }
 rm ~/.profile && { echo "Original .profile removed"; } || { echo "Error removing original .profile"; }
-rm -r ~/.vim && { echo "Original .vim removed"; } || { echo "Error removing original .vim"; }
 rm ~/.vimrc && { echo "Original .vimrc removed"; } || { echo "Error removing original .vimrc"; }
 rm ~/.tmux.conf && { echo "Original .tmux.conf removed"; } || { echo "Error removing original .tmux.conf"; }
 
