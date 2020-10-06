@@ -1,12 +1,13 @@
 # my_env
 # ======
-
+OUT OF DATE SINCE MOVING TO NVIM, WILL ADJUST SOON
 This repo holds my ideal environmental set up.
 
 If you decide to use it on a new system, be sure to do the following in order:
  - install git
  - install tmux
  - install vim
+ - instll neovim
  - run the .setup script [./.setup]
 
 It'll back up your existing bashrc and vim files, if there are any, then it'll symlink the files accordingly.

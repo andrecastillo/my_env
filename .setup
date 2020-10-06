@@ -6,9 +6,9 @@ set -e	# better to exit on an error then to let it fuck shit up
 # I use this setup across many of the servers, and systems I'm on, because damnit I like
 # my setup a whole lot.
 
+# TODO: Add the installation of the necessary software (tmux, vim, git, neovim) so if it isn't already it will be
 # Basic usage is simple, clone or download the repo into your home directory, then run this setup script
-
-# TODO: Need to add script to pull down any plugins that are needed for either vim or tmux that aren't in the repo
+# FUTURE INSTALL SNIPPET HERE
 
 # set some variables
 home=$HOME	# gonna use this throughout
@@ -42,6 +42,7 @@ checkthencopy .bashrc
 checkthencopy .bash_profile
 checkthencopy .profile
 checkthencopy .vimrc
+checkthencopy .config/nvim/init.vim
 checkthencopy .tmux.conf
 
 # remove originals
@@ -49,6 +50,7 @@ rm ~/.bashrc && { echo "Original .bashrc removed"; } || { echo "Error removing o
 rm ~/.bash_profile && { echo "Original .bash_profile removed"; } || { echo "Error removing original .bash_profile"; }
 rm ~/.profile && { echo "Original .profile removed"; } || { echo "Error removing original .profile"; }
 rm ~/.vimrc && { echo "Original .vimrc removed"; } || { echo "Error removing original .vimrc"; }
+rm ~/config/nvim/init.vim && { echo "Original init.vim removed"; } || { echo "Error removing original init.vim"; }
 rm ~/.tmux.conf && { echo "Original .tmux.conf removed"; } || { echo "Error removing original .tmux.conf"; }
 
 # symlink to my_env files
@@ -57,7 +59,9 @@ ln -nfs "${myenvrootdir}my_env/.bash_profile" .bash_profile && { echo "Symlink t
 ln -nfs "${myenvrootdir}my_env/.profile" .profile && { echo "Symlink to .profile in my_env/ successful"; } || { echo "Symlink to my_env/.profile not made"; }  
 ln -nfs "${myenvrootdir}my_env/.vim/" .vim && { echo "Symlink to .vim in my_env/ successful"; } || { echo "Symlink to my_env/.vim not made"; }
 ln -nfs "${myenvrootdir}my_env/.vimrc" .vimrc && { echo "Symlink to .vimrc in my_env/ successful"; } || { echo "Symlink to my_env/.vimrc not made"; }
+ln -nfs "${myenvrootdir}my_env/.init.vim" .config/nvim/init.vim && { echo "Symlink to init.vim in my_env/ successful"; } || { echo "Symlink to my_env/.init.vim not made"; }
 ln -nfs "${myenvrootdir}my_env/.tmux.conf" .tmux.conf && { echo "Symlink to .tmux.conf in my_env/ successful"; } || { echo "Symlink to my_env/.tmux.conf not made"; }
+ln -nfs "${myenvrootdir}my_env/colors/" .config/nvim/colors/ && { echo "Symlink to colors in my_env/ successful"; } || { echo "Symlink to my_env/colors not made"; }
 
 printf "\n\n"
 echo "========================================="
